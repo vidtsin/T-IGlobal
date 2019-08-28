@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+	<data>
+
+		<!--//Wizard view for location barcode -->
+
+		<record id="location_barcode_view_form" model="ir.ui.view">
+			<field name="name">location.barcode.form</field>
+			<field name="model">location.barcode</field>
+			<field name="arch" type="xml">
+				<form string="Location Barcode">
+					<group>
+						<group>
+							<field name="quantity" required="1" />
+							<field name="product_id" required="1" />
+							<field name="location_id" required="1" />
+							<field name="location_dest_id" required="1" />
+						</group>
+					</group>
+					<footer>
+						<button name="submit" string="Submit" type="object"
+							class="btn-primary" />
+						<button string="Cancel" class="btn-default"
+							special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<!--//Action for location barcode -->
+		<record id="location_barcode_action_menu"
+			model="ir.actions.act_window">
+			<field name="name">Location Barcode</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">location.barcode</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="location_barcode_view_form" />
+			<field name="target">new</field>
+		</record>
+
+	</data>
+</odoo>

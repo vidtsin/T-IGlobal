@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<template id="assets_backend" name="stock_barcode assets"
+			inherit_id="web.assets_backend">
+			<xpath expr="." position="inside">
+
+				<script type="text/javascript"
+					src="/custom_barcode/static/js/location_source.js"></script>
+				<script type="text/javascript"
+					src="/custom_barcode/static/js/location_source_mobile.js"></script>
+					
+				<script type="text/javascript"
+					src="/custom_barcode/static/js/location_barcode.js"></script>
+				<script type="text/javascript"
+					src="/custom_barcode/static/js/location_mobile_barcode.js"></script>
+
+			<!-- 	<link rel="stylesheet"
+					href="/stock_barcode/static/src/less/stock_barcode.less" /> -->
+
+			</xpath>
+		</template>
+
+	</data>
+</odoo>

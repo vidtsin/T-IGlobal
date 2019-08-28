@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates id="template" xml:space="preserve">
+
+<t t-name="main_menu" t-extend="main_menu">
+    <t t-jquery="div[class='row']" t-operation="replace">
+    <div class="row">
+	  <div class="col">
+   		  <button
+	class="button_operations btn btn-block btn-primary mb-4 mb-sm-0">Operations</button>
+      </div>
+      <div class="col">
+                        <button
+	class="button_inventory btn btn-block btn-primary">Inventory Adjustments</button>
+                    </div>
+                     
+	</div>
+	<br/>
+	<div class="row">
+    <div class="col">
+     <a
+	href="web#view_type=list&amp;model=purchase.order&amp;action=purchase.purchase_form_action&amp;menu_id=purchase.menu_purchase_form_action"
+	class="btn btn-block btn-primary mb-4 mb-sm-0" style="font-size: 1.25rem;">Purchase Orders</a>
+	</div>
+	 <div class="col">
+	  <a
+	href="web#view_type=list&amp;model=sale.order&amp;action=sale.action_orders&amp;menu_id=sale.menu_sale_order"
+	class="btn btn-block btn-primary mb-4 mb-sm-0" style="font-size: 1.25rem;">Sale Orders</a>
+	 </div>
+	</div>
+    </t>
+</t>
+
+</templates>
