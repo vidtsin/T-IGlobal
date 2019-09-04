@@ -77,17 +77,17 @@ class StockBarcodeController(StockBarcodeController):
 #             return {'action': action_picking_form}
         
         if corresponding_purchase:
-            action_picking_form = request.env.ref('custom_purchase.purchase_form_action_barcode')
+            action_picking_form = request.env.ref('custom_barcode.purchase_form_action_barcode')
             action_picking_form = action_picking_form.read()[0]
             action_picking_form['res_id'] = corresponding_purchase.id
             return {'action': action_picking_form}
         
         if corresponding_sale:
-            action_picking_form = request.env.ref('custom_sale.action_quotations_custom')
+            action_picking_form = request.env.ref('custom_barcode.action_quotations_custom')
             action_picking_form = action_picking_form.read()[0]
             action_picking_form['res_id'] = corresponding_sale.id
             return {'action': action_picking_form}
-        
+        print(corresponding_product_variant,"corresponding_product_variant")
         if corresponding_product_variant:
             action_rec = request.env['ir.model.data'].xmlid_to_object('custom_barcode.stock_barcode_src_location_action_main_menu')
             if action_rec:
@@ -103,11 +103,12 @@ class StockBarcodeController(StockBarcodeController):
         """ Receive a barcode scanned from the main menu and return the appropriate
             action (open an existing / new picking) or warning.
         """
+        print(request.session)
         if not request.session.get('barcode_product_id'):
 
             return {'warning': _('Please scan product one more time')}
-
-        source_location = request.env['stock.location'].search([('name', '=', barcode)])
+        print(barcode)
+        source_location = request.env['stock.location'].search([('barcode', '=', barcode)])
         
         if not source_location:
             return {'warning': _('No location found')}
@@ -117,6 +118,7 @@ class StockBarcodeController(StockBarcodeController):
         
         else:
             action_rec = request.env['ir.model.data'].xmlid_to_object('custom_barcode.stock_barcode_location_action_main_menu')
+            print(action_rec,'sss')
             if action_rec:
                 request.session['source'] = source_location.id
                 return {'action':action_rec.read()[0]}
@@ -127,13 +129,14 @@ class StockBarcodeController(StockBarcodeController):
         """ Receive a barcode scanned from the main menu and return the appropriate
             action (open an existing / new picking) or warning.
         """
+        print(request.session, "request.session")
         if request.session.get('barcode_product_id'):
             product_id = request.session['barcode_product_id']
         else:
             return {'warning': _('Please scan product one more time')}
 
-        destination_location = request.env['stock.location'].search([('name', '=', barcode)])
-
+        destination_location = request.env['stock.location'].search([('barcode', '=', barcode)])
+        print(destination_location,'lllll')
         if request.session.get('source'):
             location_id = request.session['source']
         

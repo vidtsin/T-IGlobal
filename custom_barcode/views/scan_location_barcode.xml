@@ -7,12 +7,14 @@
 			model="ir.actions.client">
 			<field name="name">Location Barcodes</field>
 			<field name="tag">scan_stock_src_location_barcode</field>
+			<!--  <field name="target">fullscreen</field> -->
 		</record>
 
 		<record id="stock_barcode_location_action_main_menu"
 			model="ir.actions.client">
 			<field name="name">Location Barcode</field>
-			<field name="tag">scan_stock_lcoation_barcode</field>
+			<field name="tag">scan_stock_location_barcode</field>
+			<!--  <field name="target">fullscreen</field> -->
 		</record>
 
 		<!-- <menuitem id = "menu_scan_lcoation_barcode" parent="stock_barcode.stock_barcode_menu" 

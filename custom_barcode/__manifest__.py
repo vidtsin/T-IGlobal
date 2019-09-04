@@ -11,6 +11,7 @@
     'depends': ['base', 'stock_barcode', 'barcodes', 'purchase', 'sale', 'product', 'stock', 'stock_barcode_mobile', 'web_mobile'],
     'qweb': ['static/xml/scan_location_barcode.xml', 'static/xml/location_mobile_barcode.xml','static/xml/barcode_menu.xml'],
     'data': [
+        'report/report_templates.xml',
         'views/scan_location_template.xml',
         'views/scan_location_barcode.xml',
         'views/custom_barcode.xml',
