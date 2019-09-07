@@ -13,7 +13,7 @@
         'purchase','base',
     ],
     'data': [
-#         'views/purchase_order_view.xml',
+        'views/purchase_order_view.xml',
     ],
     'installable': True,
     'application': True,
