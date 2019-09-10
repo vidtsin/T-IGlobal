@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="mrp_production_form_view_mrp_requisition" model="ir.ui.view">
+			<field name="name">mrp.production.form</field>
+			<field name="model">mrp.production</field>
+			<field name="inherit_id" ref="mrp.mrp_production_form_view" />
+			<field name="arch" type="xml">
+				<button name="button_mark_done" position="before">
+				 <button name="action_material_request" attrs="{'invisible': ['|',('state', '!=', 'confirmed'),('is_hide_mr','=',True)]}" string="Material Request" type="object" class="oe_highlight"/>
+				</button>
+				<button name="action_see_move_scrap" position="before">
+				<button name="material_request" icon="fa-indent" class="oe_stat_button" string="Material Request" type="object"  attrs="{'invisible': ['|',('state', '!=', 'confirmed'),('is_hide_mr','!=',True)]}"/>
+				</button>
+				<field name="origin" position="after">
+				<field name="is_hide_mr" invisible="1"/>
+				</field>
+			</field>
+		</record>
+	</data>
+</odoo>
+	

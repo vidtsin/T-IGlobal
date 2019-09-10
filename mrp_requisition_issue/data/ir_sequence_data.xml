@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data noupdate="1">
+
+		<!-- Sequences for mrp.requisition -->
+		<record id="seq_mrp_requisition" model="ir.sequence">
+			<field name="name">MRP Requisition</field>
+			<field name="code">mrp.requisition</field>
+			<field name="prefix">MR18</field>
+			<field eval="1" name="number_next" />
+			<field eval="1" name="number_increment" />
+			<field name="padding">4</field>
+			<field name="company_id" eval="False" />
+		</record>
+
+	</data>
+</odoo>

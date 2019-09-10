@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+mrp_requisition_issue_stock_manager,mrp_requisition_issue_department,mrp_requisition_issue.model_mrp_department,stock.group_stock_manager,1,1,1,1
+mrp_requisition_stock_manager,mrp_requisition_issue_form,mrp_requisition_issue.model_mrp_requisition,stock.group_stock_manager,1,1,1,1
+mrp_requisition_lines_stock_manager,mrp_requisition_issue_lines_form,mrp_requisition_issue.model_mrp_requisition_lines,stock.group_stock_manager,1,1,1,1
