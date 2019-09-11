@@ -56,10 +56,11 @@ class MrpProduction(models.Model):
 
     @api.multi
     def write(self, vals):
-        try:
-            res = super(MrpProduction, self).write(vals)
-        except IntegrityError:
-            raise ValidationError(_("Reference must be unique per Company for confirmed orders!"))
+        # try:
+        #     res = super(MrpProduction, self).write(vals)
+        # except IntegrityError:
+        #     raise ValidationError(_("Reference must be unique per Company for confirmed orders!"))
+        res = super(MrpProduction, self).write(vals)
         if 'date_planned_start' in vals:
             moves = (self.mapped('move_raw_ids') + self.mapped('move_finished_ids')).filtered(
                 lambda r: r.state not in ['done', 'cancel'])
