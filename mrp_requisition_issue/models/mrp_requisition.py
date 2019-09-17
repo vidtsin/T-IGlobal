@@ -134,7 +134,7 @@ class MrpRequisition(models.Model):
 class MrpRequisitionLines(models.Model):
     _name = 'mrp.requisition.lines'
     
-    name = fields.Text('Purpose',required=True)
+    name = fields.Text('Purpose')
     product_id = fields.Many2one('product.product',string="Product",required=True)
     required_on = fields.Date('Required On',required=True)
     product_uom_qty = fields.Float('Quantity Required',required=True)
