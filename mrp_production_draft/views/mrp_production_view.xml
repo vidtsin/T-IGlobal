@@ -26,7 +26,7 @@
              
              
             <xpath expr="//field[@name='routing_id']" position="after">
-				<field name="order_sequence" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+				<field name="order_sequence" attrs="{'readonly': [('state', '!=', 'draft')],'required': [('state', '=', 'draft')]}"/>
 			</xpath>
                        
             </field>
@@ -75,7 +75,7 @@
 		<field name="inherit_id" ref="mrp.mrp_bom_form_view" />
 		<field name="arch" type="xml">
 			<xpath expr="//field[@name='routing_id']" position="after">
-				<field name="order_sequence" />
+				<field name="order_sequence"  required="1"/>
 			</xpath>
 		</field>
 	</record>

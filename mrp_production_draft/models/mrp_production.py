@@ -53,6 +53,7 @@ class MrpProduction(models.Model):
         if not values.get('product_uom_id'):
             values['product_uom_id'] = self.env['product.product'].browse(values['product_id']).uom_id.id
         production = super(mp, self).create(values)
+        production.order_sequence = production.bom_id.order_sequence
         return production
 
     @api.multi
